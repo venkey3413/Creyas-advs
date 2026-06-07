@@ -27,7 +27,7 @@ export default function Industries() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="industries" className="relative py-10 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #fef9f0 100%)' }}>
+    <section id="industries" className="relative py-10 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f0fdf4 100%)' }}>
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-transparent to-amber-50/30" />
       <div className="absolute inset-0 opacity-[0.04]"
         style={{
