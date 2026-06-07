@@ -18,9 +18,6 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-amber-400 flex items-center justify-center font-heading font-bold text-white text-lg">
-                C
-              </div>
               <span className="font-heading font-bold text-2xl text-white tracking-tight">Creayas</span>
             </div>
             <p className="text-dark-400 leading-relaxed mb-6 max-w-sm">

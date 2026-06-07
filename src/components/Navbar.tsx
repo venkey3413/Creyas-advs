@@ -30,10 +30,7 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
       <div className="max-w-7xl mx-auto px-2 md:px-8 flex items-center justify-between gap-1 md:gap-4">
 
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-1 md:gap-2 shrink-0">
-          <div className="w-6 h-6 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-to-br from-primary-500 to-amber-400 flex items-center justify-center font-heading font-bold text-white text-xs md:text-lg">
-            C
-          </div>
+        <a href="#home" className="shrink-0">
           <span className="font-heading font-bold text-sm md:text-2xl text-gray-900 tracking-tight">
             Creayas
           </span>
