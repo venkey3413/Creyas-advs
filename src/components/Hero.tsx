@@ -42,8 +42,7 @@ export default function Hero() {
             src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 rounded-2xl bg-dark-950/40" />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-dark-950/80 via-dark-950/30 to-transparent" />
+          <div className="absolute inset-0 rounded-2xl bg-dark-950/20" />
 
           {/* Text overlaid on left */}
           <div className="absolute inset-0 flex items-center px-4">
