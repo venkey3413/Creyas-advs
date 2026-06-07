@@ -20,42 +20,23 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-dark-950">
-      {/* Background Video */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Full section overlay to completely block all YouTube UI interactions */}
-        <div className="absolute inset-0 z-20" style={{ pointerEvents: 'all', background: 'transparent' }} />
-        <div className="absolute inset-0 scale-110">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover pointer-events-none"
-            src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
-          />
-        </div>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-dark-950/30" />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-950/70 via-dark-950/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent" />
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
+      {/* Background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `linear-gradient(rgba(249,115,22,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.3) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />
-        {/* Accent glows */}
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float delay-300" />
       </div>
 
       <div className="relative container-max w-full section-padding pt-32">
-        <div className="max-w-3xl">
-          {/* Content */}
-          <div className="space-y-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+
+          {/* Left — 40% text */}
+          <div className="w-full lg:w-[40%] space-y-8">
             <div className="animate-fade-in-up">
               <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
@@ -65,7 +46,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] animate-fade-in-up delay-100">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.1] animate-fade-in-up delay-100">
               We Create{' '}
               <span className="gradient-text">Cinematic</span>
               <br />
@@ -89,7 +70,7 @@ export default function Hero() {
               ))}
             </div>
 
-            <p className="text-dark-300 text-lg md:text-xl leading-relaxed max-w-xl animate-fade-in-up delay-200">
+            <p className="text-dark-300 text-lg leading-relaxed animate-fade-in-up delay-200">
               High-quality video production for agencies, businesses & creatives.
               We transform concepts into cinematic experiences that speak louder than words.
             </p>
@@ -104,6 +85,23 @@ export default function Hero() {
               </a>
             </div>
           </div>
+
+          {/* Right — 60% video in rounded rectangle */}
+          <div className="w-full lg:w-[60%] animate-fade-in-up delay-200">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-500/10 border border-white/10" style={{ aspectRatio: '16/9' }}>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
+              />
+              {/* Subtle inner glow overlay */}
+              <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 pointer-events-none" />
+            </div>
+          </div>
+
         </div>
 
         {/* Scroll Indicator */}

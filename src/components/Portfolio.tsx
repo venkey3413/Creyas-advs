@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useAnimations';
-import { Play, ExternalLink } from 'lucide-react';
 
 const categories = ['All', 'Ad Films', 'Brand Films', 'Corporate', 'Explainer', 'Product', 'Animation'];
 
 const projects = [
-  { title: 'iwuman', category: 'Ad Films', type: 'Ad Film', img: 'https://images.pexels.com/photos/5867743/pexels-photo-5867743.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Nilkamal Homes', category: 'Brand Films', type: 'Short Form Content', img: 'https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Futuready Media', category: 'Corporate', type: 'Social Impact AV', img: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Tic-Tac-Toe', category: 'Brand Films', type: 'Brand Film', img: 'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Entropik', category: 'Corporate', type: 'Corporate Video', img: 'https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Mentco', category: 'Corporate', type: 'Corporate Video', img: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Zero B', category: 'Product', type: 'Product Video', img: 'https://images.pexels.com/photos/5632381/pexels-photo-5632381.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'India Glycol', category: 'Explainer', type: 'Explainer Video', img: 'https://images.pexels.com/photos/3735633/pexels-photo-3735633.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Idex Corp', category: 'Animation', type: '3D Product Video', img: 'https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'Tata AIG', category: 'Ad Films', type: 'Testimonial', img: 'https://images.pexels.com/photos/6613419/pexels-photo-6613419.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'D&B Research', category: 'Corporate', type: 'Video Podcast', img: 'https://images.pexels.com/photos/4060887/pexels-photo-4060887.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { title: 'ICARDA', category: 'Explainer', type: 'Success Story Video', img: 'https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { title: 'iwuman', category: 'Ad Films', type: 'Ad Film' },
+  { title: 'Nilkamal Homes', category: 'Brand Films', type: 'Short Form Content' },
+  { title: 'Futuready Media', category: 'Corporate', type: 'Social Impact AV' },
+  { title: 'Tic-Tac-Toe', category: 'Brand Films', type: 'Brand Film' },
+  { title: 'Entropik', category: 'Corporate', type: 'Corporate Video' },
+  { title: 'Mentco', category: 'Corporate', type: 'Corporate Video' },
+  { title: 'Zero B', category: 'Product', type: 'Product Video' },
+  { title: 'India Glycol', category: 'Explainer', type: 'Explainer Video' },
+  { title: 'Idex Corp', category: 'Animation', type: '3D Product Video' },
+  { title: 'Tata AIG', category: 'Ad Films', type: 'Testimonial' },
+  { title: 'D&B Research', category: 'Corporate', type: 'Video Podcast' },
+  { title: 'ICARDA', category: 'Explainer', type: 'Success Story Video' },
 ];
 
 export default function Portfolio() {
@@ -76,36 +75,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/10 ${
+      className={`group relative rounded-2xl bg-dark-900/50 border border-dark-800/50 hover:border-primary-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/10 p-6 ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="aspect-[4/3] relative">
-        <img
-          src={project.img}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-primary-500/90 flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-500">
-              <Play className="w-5 h-5 text-white" fill="currentColor" />
-            </div>
-            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-500 delay-100">
-              <ExternalLink className="w-5 h-5 text-white" />
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 p-5">
-          <p className="text-primary-400 text-xs font-semibold tracking-wider uppercase mb-1">{project.type}</p>
-          <h3 className="font-heading font-bold text-white text-xl">{project.title}</h3>
-        </div>
-      </div>
+      <p className="text-primary-400 text-xs font-semibold tracking-wider uppercase mb-2">{project.type}</p>
+      <h3 className="font-heading font-bold text-white text-xl">{project.title}</h3>
     </div>
   );
 }

@@ -31,22 +31,6 @@ export default function WhyUs() {
                 Every project is a fresh canvas, every deadline is sacred, and every client becomes a long-term partner.
               </p>
             </div>
-
-            <div className="relative rounded-2xl overflow-hidden aspect-video mb-8">
-              <img
-                src="https://images.pexels.com/photos/2873485/pexels-photo-2873485.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Behind the scenes"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-primary-500/90 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 shadow-2xl shadow-primary-500/30">
-                  <svg className="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
