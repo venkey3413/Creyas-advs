@@ -91,6 +91,71 @@
     opacity: 1;
     transform: scale(1);
   }
+
+  /* Word split animation */
+  .word-reveal .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px) rotateX(-40deg);
+    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  .word-reveal.visible .word {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  /* Char split animation */
+  .char-reveal .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+
+  .char-reveal.visible .char {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide up with fade */
+  .slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  .slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gradient text shimmer on reveal */
+  .shimmer-text {
+    background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+
+  /* Label pill pop */
+  .label-pop {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  }
+
+  .label-pop.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @layer utilities {

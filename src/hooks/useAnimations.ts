@@ -25,6 +25,64 @@ export function useScrollAnimation(threshold = 0.15) {
   return { ref, isVisible };
 }
 
+export function useWordReveal(threshold = 0.2) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return { ref, isVisible };
+}
+
+export function splitWords(text: string, baseDelay = 0, delayStep = 80) {
+  return text.split(' ').map((word, i) => (
+    <span
+      key={i}
+      className="word"
+      style={{ transitionDelay: `${baseDelay + i * delayStep}ms` }}
+    >
+      {word}&nbsp;
+    </span>
+  ));
+}
+
+export function useScrollAnimation(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return { ref, isVisible };
+}
+
 export function useCounter(end: number, duration = 2000, startOnVisible = true) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(!startOnVisible);

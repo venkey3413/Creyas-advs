@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useAnimations';
+import { useScrollAnimation, useWordReveal, splitWords } from '../hooks/useAnimations';
 import { Play, ExternalLink } from 'lucide-react';
 
 const categories = ['All', 'Ad Films', 'Brand Films', 'Corporate', 'Explainer', 'Product', 'Animation'];
@@ -22,6 +22,7 @@ const projects = [
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All');
   const { ref, isVisible } = useScrollAnimation();
+  const { ref: headingRef, isVisible: headingVisible } = useWordReveal();
 
   const filtered = activeCategory === 'All'
     ? projects
@@ -32,12 +33,12 @@ export default function Portfolio() {
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950/50 to-dark-900" />
 
       <div className="relative container-max">
-        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-12 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
-          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Portfolio</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our <span className="gradient-text">Work</span>
+        <div className="text-center mb-12">
+          <p ref={ref as React.RefObject<HTMLDivElement>} className={`label-pop text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3 inline-block ${isVisible ? 'visible' : ''}`}>Portfolio</p>
+          <h2 ref={headingRef as React.RefObject<HTMLDivElement>} className={`word-reveal font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 ${headingVisible ? 'visible' : ''}`}>
+            {splitWords('Our')} <span className="shimmer-text">{splitWords('Work', 100)}</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className={`slide-up text-dark-400 text-lg max-w-2xl mx-auto ${headingVisible ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
             Every frame tells a story. Browse our latest work and see how we blend strategy with stunning visual storytelling.
           </p>
         </div>

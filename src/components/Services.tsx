@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useAnimations';
+import { useScrollAnimation, useWordReveal, splitWords } from '../hooks/useAnimations';
 import {
   Film, Camera, Video, Presentation, Palette, Mic2,
   BookOpen, MessageSquareQuote, Plane, PartyPopper,
@@ -25,6 +25,7 @@ const services = [
 
 export default function Services() {
   const { ref, isVisible } = useScrollAnimation();
+  const { ref: headingRef, isVisible: headingVisible } = useWordReveal();
 
   return (
     <section id="services" className="relative bg-dark-900 section-padding overflow-hidden">
@@ -33,12 +34,12 @@ export default function Services() {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl" />
 
       <div className="relative container-max">
-        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
-          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Our Craft</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Discover Our <span className="gradient-text">Expertise</span>
+        <div className="text-center mb-16">
+          <p ref={ref as React.RefObject<HTMLDivElement>} className={`label-pop text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3 inline-block ${isVisible ? 'visible' : ''}`}>Our Craft</p>
+          <h2 ref={headingRef as React.RefObject<HTMLDivElement>} className={`word-reveal font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 ${headingVisible ? 'visible' : ''}`}>
+            {splitWords('Discover Our')} <span className="shimmer-text">{splitWords('Expertise', 200)}</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className={`slide-up text-dark-400 text-lg max-w-2xl mx-auto ${headingVisible ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
             Explore our specialized video production services designed to elevate your brand.
           </p>
         </div>

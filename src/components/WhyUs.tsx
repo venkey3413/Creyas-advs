@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useAnimations';
+import { useScrollAnimation, useWordReveal, splitWords } from '../hooks/useAnimations';
 import { Shield, Zap, Clock, Award, Heart, Target } from 'lucide-react';
 
 const reasons = [
@@ -12,6 +12,7 @@ const reasons = [
 
 export default function WhyUs() {
   const { ref, isVisible } = useScrollAnimation();
+  const { ref: headingRef, isVisible: headingVisible } = useWordReveal();
 
   return (
     <section className="relative bg-dark-900 section-padding overflow-hidden">
@@ -22,11 +23,11 @@ export default function WhyUs() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div ref={ref as React.RefObject<HTMLDivElement>}>
             <div className={`${isVisible ? 'animate-on-scroll-left visible' : 'animate-on-scroll-left'}`}>
-              <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Why Us</p>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Because We Go <span className="gradient-text">Above & Beyond</span>
+              <p className={`label-pop text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3 inline-block ${isVisible ? 'visible' : ''}`}>Why Us</p>
+              <h2 ref={headingRef as React.RefObject<HTMLDivElement>} className={`word-reveal font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 ${headingVisible ? 'visible' : ''}`}>
+                {splitWords('Because We Go')} <span className="shimmer-text">{splitWords('Above & Beyond', 300)}</span>
               </h2>
-              <p className="text-dark-400 text-lg leading-relaxed mb-8">
+              <p className={`slide-up text-dark-400 text-lg leading-relaxed mb-8 ${headingVisible ? 'visible' : ''}`} style={{ transitionDelay: '500ms' }}>
                 We don't just produce videos -- we engineer visual experiences that move people.
                 Every project is a fresh canvas, every deadline is sacred, and every client becomes a long-term partner.
               </p>

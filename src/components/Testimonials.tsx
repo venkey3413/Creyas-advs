@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useAnimations';
+import { useScrollAnimation, useWordReveal, splitWords } from '../hooks/useAnimations';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 
 const testimonials = [
@@ -44,6 +44,7 @@ const testimonials = [
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const { ref, isVisible } = useScrollAnimation();
+  const { ref: headingRef, isVisible: headingVisible } = useWordReveal();
 
   const itemsPerPage = typeof window !== 'undefined' && window.innerWidth >= 768 ? 3 : 1;
   const maxIndex = Math.max(0, testimonials.length - itemsPerPage);
@@ -56,15 +57,7 @@ export default function Testimonials() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-3xl" />
 
       <div className="relative container-max">
-        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
-          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Client Voices</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Client <span className="gradient-text">Testimonials</span>
-          </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            Don't take our word for it. Hear directly from the brands we've helped shine on screen.
-          </p>
-        </div>
+        <div className="mb-16" />
 
         <div className="relative">
           <div className="overflow-hidden">
