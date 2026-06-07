@@ -132,6 +132,10 @@
 
   /* Gradient text shimmer on reveal */
   .shimmer-text {
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
     background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
     background-size: 200%;
     -webkit-background-clip: text;
