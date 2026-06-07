@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Play, ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const heroTags = ['Ad Films', 'Corporate Videos', 'Brand Stories', 'Product Videos'];
 
@@ -101,15 +101,6 @@ export default function Hero() {
               >
                 See Our Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#showreel"
-                className="group flex items-center gap-3 border-2 border-white/20 hover:border-primary-500/50 text-white px-8 py-4 rounded-full font-semibold text-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1"
-              >
-                <span className="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center group-hover:bg-primary-500 transition-colors duration-300">
-                  <Play className="w-4 h-4 text-primary-400 group-hover:text-white transition-colors" fill="currentColor" />
-                </span>
-                Watch Showreel
               </a>
             </div>
           </div>

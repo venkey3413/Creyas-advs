@@ -6,7 +6,7 @@ const stats = [
   { icon: FolderOpen, value: 1000, suffix: '+', label: 'Projects', color: 'from-accent-500 to-emerald-400' },
   { icon: Users, value: 600, suffix: '+', label: 'Happy Clients', color: 'from-sky-500 to-cyan-400' },
   { icon: Lightbulb, value: 70, suffix: '+', label: 'Creative Minds', color: 'from-rose-500 to-pink-400' },
-  { icon: Globe, value: 12, suffix: '', label: 'Countries & Counting', color: 'from-violet-500 to-purple-400' },
+
   { icon: Film, value: 500, suffix: '+', label: 'Ad Films Created', color: 'from-amber-500 to-yellow-400' },
 ];
 
