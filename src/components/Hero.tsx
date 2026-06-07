@@ -33,37 +33,42 @@ export default function Hero() {
 
       <div className="relative w-full px-4 md:container-max md:px-8 lg:px-12">
 
-        {/* Mobile layout — stacked */}
-        <div className="flex flex-col gap-4 md:hidden">
-          {/* Text */}
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-3 py-1.5">
-              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse" />
-              <span className="text-primary-400 text-xs font-medium tracking-wide">Cinematic Video Production Studio</span>
-            </div>
-            <h1 className="font-heading text-2xl font-bold text-white leading-[1.2]">
-              We Create <span className="gradient-text">Cinematic</span><br />
-              Visuals That Tell<br />
-              <span className="text-dark-300">Your Story</span>
-            </h1>
-            <div className="flex flex-wrap gap-1.5">
-              {heroTags.map((tag, i) => (
-                <span key={tag} className={`px-2.5 py-1 rounded-full text-xs font-semibold border transition-all duration-400 ${
-                  i === tagIndex && !isTransitioning
-                    ? 'bg-primary-500/20 border-primary-500/40 text-primary-300'
-                    : 'bg-dark-800/40 border-dark-700/40 text-dark-400'
-                }`}>{tag}</span>
-              ))}
-            </div>
-            <a href="#stats" className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300">
-              See Our Work <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+        {/* Mobile layout — video fills section height, text overlaid on left */}
+        <div className="relative md:hidden" style={{ height: 'calc(100vw * 0.7)' }}>
+          {/* Video stretched to fill full height */}
+          <video autoPlay muted loop playsInline
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 rounded-2xl bg-dark-950/40" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-dark-950/80 via-dark-950/30 to-transparent" />
 
-          {/* Full width video */}
-          <div className="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10" style={{ aspectRatio: '16/9' }}>
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover"
-              src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4" />
+          {/* Text overlaid on left */}
+          <div className="absolute inset-0 flex items-center px-4">
+            <div className="w-[55%] space-y-2">
+              <div className="inline-flex items-center gap-1.5 bg-primary-500/20 border border-primary-500/30 rounded-full px-2.5 py-1">
+                <div className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse" />
+                <span className="text-primary-300 text-[9px] font-medium tracking-wide leading-tight">Cinematic Video Production Studio</span>
+              </div>
+              <h1 className="font-heading text-lg font-bold text-white leading-[1.2]">
+                We Create <span className="gradient-text">Cinematic</span><br />
+                Visuals That Tell<br />
+                <span className="text-dark-300">Your Story</span>
+              </h1>
+              <div className="flex flex-wrap gap-1">
+                {heroTags.map((tag, i) => (
+                  <span key={tag} className={`px-1.5 py-0.5 rounded-full text-[8px] font-semibold border transition-all duration-400 ${
+                    i === tagIndex && !isTransitioning
+                      ? 'bg-primary-500/30 border-primary-500/50 text-primary-200'
+                      : 'bg-dark-800/50 border-dark-700/50 text-dark-300'
+                  }`}>{tag}</span>
+                ))}
+              </div>
+              <a href="#stats" className="inline-flex items-center gap-1 bg-primary-500 text-white px-3 py-1.5 rounded-full font-semibold text-[10px] transition-all duration-300">
+                See Our Work <ArrowRight className="w-2.5 h-2.5" />
+              </a>
+            </div>
           </div>
         </div>
 
