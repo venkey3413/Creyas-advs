@@ -63,15 +63,15 @@ function IndustryCard({ industry, index }: { industry: typeof industries[0]; ind
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group flex flex-col items-center text-center p-5 md:p-6 rounded-2xl bg-white border border-gray-200 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/10 cursor-pointer ${
+      className={`group flex flex-col items-center text-center p-2 md:p-6 rounded-2xl bg-white border border-gray-200 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/10 cursor-pointer ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 50}ms` }}
     >
-      <div className="w-14 h-14 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-3 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
-        <industry.icon className="w-7 h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
+      <div className="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary-500/10 flex items-center justify-center mb-1 md:mb-3 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
+        <industry.icon className="w-4 h-4 md:w-7 md:h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
       </div>
-      <p className="text-gray-600 group-hover:text-gray-900 font-medium text-sm transition-colors duration-300">
+      <p className="text-gray-600 group-hover:text-gray-900 font-medium text-[9px] md:text-sm transition-colors duration-300 leading-tight">
         {industry.name}
       </p>
     </div>

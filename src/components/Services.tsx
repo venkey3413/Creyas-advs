@@ -59,16 +59,16 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group relative rounded-2xl bg-dark-900/50 border border-dark-800/50 hover:border-primary-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/10 p-6 ${
+      className={`group relative rounded-2xl bg-dark-900/50 border border-dark-800/50 hover:border-primary-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/10 p-3 md:p-6 ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 60}ms` }}
     >
-      <div className="w-10 h-10 rounded-xl bg-primary-500/20 border border-primary-500/20 flex items-center justify-center mb-4 group-hover:bg-primary-500/40 transition-colors duration-300">
-        <service.icon className="w-5 h-5 text-primary-400" />
+      <div className="w-7 h-7 md:w-10 md:h-10 rounded-xl bg-primary-500/20 border border-primary-500/20 flex items-center justify-center mb-2 md:mb-4 group-hover:bg-primary-500/40 transition-colors duration-300">
+        <service.icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary-400" />
       </div>
-      <h3 className="font-heading font-bold text-white text-base md:text-lg mb-2">{service.title}</h3>
-      <p className="text-dark-400 text-xs md:text-sm leading-relaxed">{service.desc}</p>
+      <h3 className="font-heading font-bold text-white text-[10px] md:text-lg mb-1 md:mb-2 leading-tight">{service.title}</h3>
+      <p className="text-dark-400 text-[8px] md:text-sm leading-relaxed hidden md:block">{service.desc}</p>
     </div>
   );
 }

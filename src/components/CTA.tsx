@@ -19,7 +19,7 @@ export default function CTA({ onRequestCallback }: { onRequestCallback: () => vo
             At Creayas, we believe every brand has a story worth telling. Driven by creativity, precision, and purpose, we deliver visual content that helps brands grow and stand out. Let's collaborate and create something unforgettable.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             <button
               onClick={onRequestCallback}
               className="group flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/25 hover:-translate-y-1"
