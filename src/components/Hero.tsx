@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex items-center overflow-hidden bg-dark-950 pt-16 pb-6 md:pt-24 md:pb-10">
+    <section id="home" className="relative flex items-center overflow-hidden pt-16 pb-6 md:bg-dark-950 md:pt-24 md:pb-10">
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -41,8 +41,7 @@ export default function Hero() {
             style={{ top: '-4rem', height: 'calc(100% + 6rem)' }}
             src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
           />
-          {/* Dark overlay */}
-          <div className="absolute inset-0 rounded-2xl bg-dark-950/20" />
+
 
           {/* Text overlaid on left */}
           <div className="absolute inset-0 flex items-center px-4">
