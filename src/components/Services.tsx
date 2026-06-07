@@ -27,10 +27,8 @@ export default function Services() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="services" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a0c 0%, #0f172a 40%, #1a0c0c 100%)' }}>
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/10 via-transparent to-primary-900/10" />
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-3xl" />
+    <section id="services" className="relative section-padding overflow-hidden" style={{ backgroundImage: "url('/Discover Our Expertise bg photo.jfif')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <div className="absolute inset-0 bg-dark-950/70" />
 
       <div className="relative container-max">
         <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
