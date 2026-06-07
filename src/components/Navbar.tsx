@@ -45,10 +45,10 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-700 hover:text-primary-500 font-medium text-[9px] md:text-sm tracking-wide transition-colors duration-300 whitespace-nowrap relative group"
+              className="text-gray-900 hover:text-primary-500 font-semibold text-[9px] md:text-sm tracking-wide transition-colors duration-300 whitespace-nowrap relative group bg-gray-100 md:bg-transparent px-1.5 py-0.5 md:px-0 md:py-0 rounded-md md:rounded-none"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full hidden md:block" />
             </a>
           ))}
         </div>
