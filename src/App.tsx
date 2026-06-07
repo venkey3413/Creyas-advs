@@ -38,7 +38,6 @@ function App() {
       <Stats />
       <Services />
       <Industries />
-      <WhyUs />
       <CTA onRequestCallback={() => setShowCallback(true)} />
       <Footer />
 
