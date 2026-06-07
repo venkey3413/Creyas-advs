@@ -31,7 +31,7 @@ export default function Industries() {
       id="industries"
       className="relative py-10 md:py-24 overflow-hidden"
       style={{
-        backgroundImage: "url('/cinematic-industries-bg.webp')",
+        backgroundImage: "url('/cinematic-industries-bg.webp.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
