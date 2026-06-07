@@ -34,10 +34,11 @@ export default function Hero() {
       <div className="relative w-full px-4 md:container-max md:px-8 lg:px-12">
 
         {/* Mobile layout — video fills section height, text overlaid on left */}
-        <div className="relative md:hidden" style={{ height: 'calc(100vh - 52px)' }}>
-          {/* Video stretched to fill full height */}
+        <div className="relative md:hidden" style={{ height: 'calc(100vw * 0.7)' }}>
+          {/* Video taller than section — stretches from navbar to stats section */}
           <video autoPlay muted loop playsInline
-            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            className="absolute left-0 w-full object-cover rounded-2xl"
+            style={{ top: '-4rem', height: 'calc(100% + 6rem)' }}
             src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
           />
           {/* Dark overlay */}
