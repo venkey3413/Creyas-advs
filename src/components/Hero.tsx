@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex items-center overflow-hidden bg-dark-950 pt-16 pb-8 md:pt-24 md:pb-10">
+    <section id="home" className="relative flex items-center overflow-hidden bg-dark-950 pt-28 pb-16 md:pt-24 md:pb-10">
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-[0.02]"
           style={{

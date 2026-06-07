@@ -19,7 +19,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
         (animRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
         (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
       }}
-      className={`group relative bg-white border border-gray-200 rounded-2xl p-4 md:p-6 text-center hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 ${
+      className={`group relative bg-white border border-gray-200 rounded-2xl p-2 md:p-6 text-center hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
@@ -39,10 +39,10 @@ export default function Stats() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="stats" className="relative py-10 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #fef3c7 100%)' }}>
+    <section id="stats" className="relative py-6 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #fef3c7 100%)' }}>
       <div className="absolute inset-0 bg-gradient-to-b from-orange-50/50 via-transparent to-amber-50/30" />
       <div ref={ref as React.RefObject<HTMLDivElement>} className="relative container-max">
-        <div className={`text-center mb-8 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
+        <div className={`text-center mb-4 md:mb-8 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
           <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
             Why Choose <span className="shimmer-text">Creayas</span>
           </h2>
