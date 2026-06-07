@@ -27,9 +27,9 @@ export default function Industries() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="industries" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #0f1729 100%)' }}>
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-transparent to-orange-900/10" />
-      <div className="absolute inset-0 opacity-[0.03]"
+    <section id="industries" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #fef9f0 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-transparent to-amber-50/30" />
+      <div className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `radial-gradient(circle, rgba(249,115,22,0.5) 1px, transparent 1px)`,
           backgroundSize: '30px 30px',
@@ -39,10 +39,10 @@ export default function Industries() {
       <div className="relative container-max">
         <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
           <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Sectors We Serve</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Industries We <span className="shimmer-text">Excel In</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Whether it's a high-energy TVC or a nuanced corporate film, we deliver stunning visual narratives across every sector.
           </p>
         </div>
@@ -63,7 +63,7 @@ function IndustryCard({ industry, index }: { industry: typeof industries[0]; ind
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group flex flex-col items-center text-center p-5 md:p-6 rounded-2xl bg-dark-900/30 border border-dark-800/30 hover:border-primary-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/5 cursor-pointer ${
+      className={`group flex flex-col items-center text-center p-5 md:p-6 rounded-2xl bg-white border border-gray-200 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/10 cursor-pointer ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 50}ms` }}
@@ -71,7 +71,7 @@ function IndustryCard({ industry, index }: { industry: typeof industries[0]; ind
       <div className="w-14 h-14 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-3 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
         <industry.icon className="w-7 h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
       </div>
-      <p className="text-dark-300 group-hover:text-white font-medium text-sm transition-colors duration-300">
+      <p className="text-gray-600 group-hover:text-gray-900 font-medium text-sm transition-colors duration-300">
         {industry.name}
       </p>
     </div>

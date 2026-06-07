@@ -20,7 +20,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
         (animRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
         (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
       }}
-      className={`group relative bg-dark-900/50 border border-dark-800/50 rounded-2xl p-6 md:p-8 text-center hover:border-primary-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/5 ${
+      className={`group relative bg-white border border-gray-200 rounded-2xl p-6 md:p-8 text-center hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10 ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
@@ -28,10 +28,10 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
       <div className={`w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
         <stat.icon className="w-7 h-7 text-white" />
       </div>
-      <div className="font-heading text-4xl md:text-5xl font-bold text-white mb-2">
+      <div className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-2">
         {count}{stat.suffix}
       </div>
-      <p className="text-dark-400 font-medium">{stat.label}</p>
+      <p className="text-gray-500 font-medium">{stat.label}</p>
     </div>
   );
 }
@@ -40,14 +40,14 @@ export default function Stats() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="stats" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)' }}>
-      <div className="absolute inset-0 bg-gradient-to-b from-violet-900/10 via-transparent to-indigo-900/10" />
+    <section id="stats" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #fef3c7 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-50/50 via-transparent to-amber-50/30" />
       <div ref={ref as React.RefObject<HTMLDivElement>} className="relative container-max">
         <div className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Why Choose <span className="shimmer-text">Creayas</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Results don't lie. Our track record speaks volumes about the craft, dedication, and impact we bring to every production.
           </p>
         </div>
