@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="relative w-full px-4 md:container-max md:px-8 lg:px-12">
 
         {/* Mobile layout — video fills section height, text overlaid on left */}
-        <div className="relative md:hidden" style={{ height: 'calc(100vw * 0.7)' }}>
+        <div className="relative md:hidden" style={{ height: 'calc(100vh - 52px)' }}>
           {/* Video stretched to fill full height */}
           <video autoPlay muted loop playsInline
             className="absolute inset-0 w-full h-full object-cover rounded-2xl"
