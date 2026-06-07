@@ -25,12 +25,13 @@ export default function Hero() {
         {/* Full section overlay to completely block all YouTube UI interactions */}
         <div className="absolute inset-0 z-20" style={{ pointerEvents: 'all', background: 'transparent' }} />
         <div className="absolute inset-0 scale-110">
-          <iframe
-            src="https://www.youtube.com/embed/3gKp3qLvsZ0?autoplay=1&mute=1&loop=1&playlist=3gKp3qLvsZ0&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&vq=hd1080&hd=1&iv_load_policy=3&fs=0&cc_load_policy=0"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vw] h-[200vh] min-w-[100vw] min-h-[56.25vw] pointer-events-none"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            title="Creayas Showreel Background"
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover pointer-events-none"
+            src="https://res.cloudinary.com/dqdclezfo/video/upload/final_hero_section_video_3_fpux98.mp4"
           />
         </div>
         {/* Dark overlay for text readability */}
