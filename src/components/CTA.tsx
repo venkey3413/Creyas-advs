@@ -13,7 +13,7 @@ export default function CTA({ onRequestCallback }: { onRequestCallback: () => vo
         {/* Left — image */}
         <div className="w-full md:w-[45%] min-h-[250px] md:min-h-full">
           <img
-            src="/Get in touch bg.jfif"
+            src="/Get in touch bg.tiff"
             alt="Get in touch"
             className="w-full h-full object-cover"
           />
