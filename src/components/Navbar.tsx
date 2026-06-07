@@ -24,8 +24,8 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-gradient-to-r from-dark-950 via-dark-900 to-dark-950 backdrop-blur-xl shadow-2xl shadow-primary-500/5 py-3 border-b border-primary-500/10'
-          : 'bg-gradient-to-r from-dark-950/60 via-dark-900/40 to-dark-950/60 backdrop-blur-sm py-5'
+          ? 'bg-white backdrop-blur-xl shadow-2xl shadow-primary-500/5 py-3 border-b border-gray-200'
+          : 'bg-white/90 backdrop-blur-sm py-5'
       }`}
     >
       <div className="container-max flex items-center justify-between">
