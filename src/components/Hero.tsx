@@ -34,10 +34,10 @@ export default function Hero() {
           />
         </div>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-dark-950/60" />
+        <div className="absolute inset-0 bg-dark-950/30" />
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-950/90 via-dark-950/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-dark-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-950/70 via-dark-950/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent" />
         {/* Subtle grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"

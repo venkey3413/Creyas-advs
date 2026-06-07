@@ -33,7 +33,7 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-amber-400 flex items-center justify-center font-heading font-bold text-white text-lg group-hover:scale-110 transition-transform duration-300">
             C
           </div>
-          <span className="font-heading font-bold text-2xl text-white tracking-tight">
+          <span className="font-heading font-bold text-2xl text-gray-900 tracking-tight">
             Creayas
           </span>
         </a>
@@ -43,7 +43,7 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
             <a
               key={link.label}
               href={link.href}
-              className="text-dark-300 hover:text-primary-400 font-medium text-sm tracking-wide transition-colors duration-300 relative group"
+              className="text-gray-700 hover:text-primary-500 font-medium text-sm tracking-wide transition-colors duration-300 relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full" />
@@ -63,7 +63,7 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
 
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-gray-900 p-2"
         >
           {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
