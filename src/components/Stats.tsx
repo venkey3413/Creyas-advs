@@ -1,4 +1,4 @@
-import { useCounter, useScrollAnimation, useWordReveal, splitWords } from '../hooks/useAnimations';
+import { useCounter, useScrollAnimation } from '../hooks/useAnimations';
 import { Award, FolderOpen, Users, Lightbulb, Globe, Film } from 'lucide-react';
 
 const stats = [
@@ -38,17 +38,16 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
 export default function Stats() {
   const { ref, isVisible } = useScrollAnimation();
-  const { ref: headingRef, isVisible: headingVisible } = useWordReveal();
 
   return (
     <section id="stats" className="relative bg-dark-950 section-padding">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-950/90 to-dark-900/50" />
-      <div className="relative container-max">
-        <div className="text-center mb-16">
-          <h2 ref={headingRef as React.RefObject<HTMLDivElement>} className={`word-reveal font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 ${headingVisible ? 'visible' : ''}`}>
-            {splitWords('Why Choose')} <span className="shimmer-text">{splitWords('Creayas', 200)}</span>
+      <div ref={ref as React.RefObject<HTMLDivElement>} className="relative container-max">
+        <div className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Why Choose <span className="shimmer-text">Creayas</span>
           </h2>
-          <p ref={ref as React.RefObject<HTMLDivElement>} className={`slide-up text-dark-400 text-lg max-w-2xl mx-auto ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
             Results don't lie. Our track record speaks volumes about the craft, dedication, and impact we bring to every production.
           </p>
         </div>

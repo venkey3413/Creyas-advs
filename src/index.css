@@ -96,13 +96,13 @@
   .word-reveal .word {
     display: inline-block;
     opacity: 0;
-    transform: translateY(60px) rotateX(-40deg);
-    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   }
 
   .word-reveal.visible .word {
     opacity: 1;
-    transform: translateY(0) rotateX(0deg);
+    transform: translateY(0);
   }
 
   /* Char split animation */

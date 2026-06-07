@@ -6,7 +6,6 @@ import Services from './components/Services';
 import Industries from './components/Industries';
 import Portfolio from './components/Portfolio';
 import WhyUs from './components/WhyUs';
-import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CallbackPopup from './components/CallbackPopup';
@@ -42,7 +41,6 @@ function App() {
       <Industries />
       <Portfolio />
       <WhyUs />
-      <Testimonials />
       <CTA onRequestCallback={() => setShowCallback(true)} />
       <Footer />
 
