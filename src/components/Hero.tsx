@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-dark-950">
+    <section id="home" className="relative flex items-center overflow-hidden bg-dark-950 py-24 pt-28">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-[0.02]"
@@ -32,21 +32,21 @@ export default function Hero() {
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float delay-300" />
       </div>
 
-      <div className="relative container-max w-full section-padding pt-32">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="relative container-max w-full px-4 md:px-8 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
 
           {/* Left — 40% text */}
-          <div className="w-full lg:w-[40%] space-y-8">
+          <div className="w-full lg:w-[40%] space-y-5">
             <div className="animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-4 py-2 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-                <span className="text-primary-400 text-sm font-medium tracking-wide">
+                <span className="text-primary-400 text-xs font-medium tracking-wide">
                   Cinematic Video Production Studio
                 </span>
               </div>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.1] animate-fade-in-up delay-100">
+            <h1 className="font-heading text-3xl sm:text-4xl font-bold text-white leading-[1.15] animate-fade-in-up delay-100">
               We Create{' '}
               <span className="gradient-text">Cinematic</span>
               <br />
@@ -55,11 +55,11 @@ export default function Hero() {
               <span className="text-dark-300">Your Story</span>
             </h1>
 
-            <div className="flex flex-wrap gap-3 animate-fade-in-up delay-150">
+            <div className="flex flex-wrap gap-2 animate-fade-in-up delay-150">
               {heroTags.map((tag, i) => (
                 <span
                   key={tag}
-                  className={`px-4 py-1.5 rounded-full text-sm font-semibold border backdrop-blur-sm transition-all duration-400 ${
+                  className={`px-3 py-1 rounded-full text-xs font-semibold border backdrop-blur-sm transition-all duration-400 ${
                     i === tagIndex && !isTransitioning
                       ? 'bg-primary-500/20 border-primary-500/40 text-primary-300 scale-105'
                       : 'bg-dark-800/40 border-dark-700/40 text-dark-400'
@@ -70,7 +70,7 @@ export default function Hero() {
               ))}
             </div>
 
-            <p className="text-dark-300 text-lg leading-relaxed animate-fade-in-up delay-200">
+            <p className="text-dark-300 text-sm leading-relaxed animate-fade-in-up delay-200">
               High-quality video production for agencies, businesses & creatives.
               We transform concepts into cinematic experiences that speak louder than words.
             </p>
@@ -78,10 +78,10 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
               <a
                 href="#work"
-                className="group flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/25 hover:-translate-y-1"
+                className="group flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/25 hover:-translate-y-1"
               >
                 See Our Work
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
@@ -105,8 +105,8 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-subtle">
-          <a href="#stats" className="text-dark-500 hover:text-primary-400 transition-colors">
+        <div className="flex justify-center mt-8">
+          <a href="#stats" className="text-dark-500 hover:text-primary-400 transition-colors animate-bounce-subtle">
             <ChevronDown className="w-6 h-6" />
           </a>
         </div>
