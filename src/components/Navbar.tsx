@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -12,7 +12,6 @@ const navLinks = [
 
 export default function Navbar({ onRequestCallback }: { onRequestCallback: () => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -24,26 +23,29 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white backdrop-blur-xl shadow-2xl shadow-primary-500/5 py-3 border-b border-gray-200'
-          : 'bg-white/90 backdrop-blur-sm py-5'
+          ? 'bg-white shadow-lg border-b border-gray-200 py-1.5 md:py-3'
+          : 'bg-white/95 backdrop-blur-sm py-2 md:py-5'
       }`}
     >
-      <div className="container-max flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-amber-400 flex items-center justify-center font-heading font-bold text-white text-lg group-hover:scale-110 transition-transform duration-300">
+      <div className="max-w-7xl mx-auto px-2 md:px-8 flex items-center justify-between gap-1 md:gap-4">
+
+        {/* Logo */}
+        <a href="#home" className="flex items-center gap-1 md:gap-2 shrink-0">
+          <div className="w-6 h-6 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-to-br from-primary-500 to-amber-400 flex items-center justify-center font-heading font-bold text-white text-xs md:text-lg">
             C
           </div>
-          <span className="font-heading font-bold text-2xl text-gray-900 tracking-tight">
+          <span className="font-heading font-bold text-sm md:text-2xl text-gray-900 tracking-tight">
             Creayas
           </span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Nav Links */}
+        <div className="flex items-center gap-1 md:gap-8 overflow-x-auto scrollbar-hide">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-700 hover:text-primary-500 font-medium text-sm tracking-wide transition-colors duration-300 relative group"
+              className="text-gray-700 hover:text-primary-500 font-medium text-[9px] md:text-sm tracking-wide transition-colors duration-300 whitespace-nowrap relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full" />
@@ -51,54 +53,16 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <button
-            onClick={onRequestCallback}
-            className="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 hover:-translate-y-0.5"
-          >
-            <Phone className="w-4 h-4" />
-            Request Callback
-          </button>
-        </div>
-
+        {/* CTA Button */}
         <button
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden text-gray-900 p-2"
+          onClick={onRequestCallback}
+          className="shrink-0 flex items-center gap-1 bg-primary-500 hover:bg-primary-600 text-white px-2 py-1 md:px-5 md:py-2.5 rounded-full font-semibold text-[8px] md:text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 whitespace-nowrap"
         >
-          {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <Phone className="w-2.5 h-2.5 md:w-4 md:h-4" />
+          <span className="hidden xs:inline">Request Callback</span>
+          <span className="xs:hidden">Call</span>
         </button>
-      </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden transition-all duration-500 overflow-hidden ${
-          isMobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="bg-white border-t border-gray-200 mt-3">
-          <div className="container-max py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMobileOpen(false)}
-                className="text-gray-700 hover:text-primary-500 font-medium text-lg transition-colors duration-300 py-2"
-              >
-                {link.label}
-              </a>
-            ))}
-            <button
-              onClick={() => {
-                onRequestCallback();
-                setIsMobileOpen(false);
-              }}
-              className="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-5 py-3 rounded-full font-semibold text-sm transition-all duration-300 mt-2 w-fit"
-            >
-              <Phone className="w-4 h-4" />
-              Request Callback
-            </button>
-          </div>
-        </div>
       </div>
     </nav>
   );
