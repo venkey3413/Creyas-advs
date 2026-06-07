@@ -27,8 +27,8 @@ export default function Portfolio() {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="work" className="relative bg-dark-900 section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950/50 to-dark-900" />
+    <section id="work" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0f1e 0%, #0f172a 40%, #0d1117 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-900/10 via-transparent to-cyan-900/10" />
 
       <div className="relative container-max">
         <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-12 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>

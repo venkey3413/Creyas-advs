@@ -40,8 +40,8 @@ export default function Stats() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="stats" className="relative bg-dark-950 section-padding">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-950/90 to-dark-900/50" />
+    <section id="stats" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-900/10 via-transparent to-indigo-900/10" />
       <div ref={ref as React.RefObject<HTMLDivElement>} className="relative container-max">
         <div className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">

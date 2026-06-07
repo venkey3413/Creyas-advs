@@ -5,8 +5,8 @@ export default function CTA({ onRequestCallback }: { onRequestCallback: () => vo
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="contact" className="relative bg-dark-950 section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-amber-500/5" />
+    <section id="contact" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0a00 0%, #0f172a 50%, #0f0a00 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/8 via-transparent to-amber-500/8" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-3xl" />
 
       <div ref={ref as React.RefObject<HTMLDivElement>} className="relative container-max text-center">

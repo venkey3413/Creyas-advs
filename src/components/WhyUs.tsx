@@ -14,9 +14,9 @@ export default function WhyUs() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative bg-dark-900 section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-dark-950/80 to-dark-900/50" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-3xl" />
+    <section className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #12001a 0%, #0f172a 50%, #1a0a00 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/15 via-transparent to-primary-900/15" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="relative container-max">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

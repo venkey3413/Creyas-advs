@@ -27,8 +27,9 @@ export default function Industries() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="industries" className="relative bg-dark-950 section-padding overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.02]"
+    <section id="industries" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1c1917 50%, #0f1729 100%)' }}>
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-transparent to-orange-900/10" />
+      <div className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `radial-gradient(circle, rgba(249,115,22,0.5) 1px, transparent 1px)`,
           backgroundSize: '30px 30px',
