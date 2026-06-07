@@ -19,7 +19,7 @@ export default function WhyUs() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-200/20 rounded-full blur-3xl" />
 
       <div className="relative container-max">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-2 gap-8 md:gap-16 items-center">
           <div ref={ref as React.RefObject<HTMLDivElement>}>
             <div className={`${isVisible ? 'animate-on-scroll-left visible' : 'animate-on-scroll-left'}`}>
               <p className="text-primary-500 font-semibold text-sm tracking-wider uppercase mb-3">Why Us</p>
@@ -33,7 +33,7 @@ export default function WhyUs() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
             {reasons.map((reason, i) => (
               <ReasonCard key={reason.title} reason={reason} index={i} />
             ))}

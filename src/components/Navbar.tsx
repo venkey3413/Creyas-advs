@@ -75,14 +75,14 @@ export default function Navbar({ onRequestCallback }: { onRequestCallback: () =>
           isMobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-dark-950/95 backdrop-blur-xl border-t border-dark-800/50 mt-3">
+        <div className="bg-white border-t border-gray-200 mt-3">
           <div className="container-max py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileOpen(false)}
-                className="text-dark-300 hover:text-primary-400 font-medium text-lg transition-colors duration-300 py-2"
+                className="text-gray-700 hover:text-primary-500 font-medium text-lg transition-colors duration-300 py-2"
               >
                 {link.label}
               </a>

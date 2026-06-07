@@ -33,10 +33,10 @@ export default function Hero() {
       </div>
 
       <div className="relative container-max w-full px-4 md:px-8 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-row items-center gap-6 md:gap-10">
 
           {/* Left — 40% text */}
-          <div className="w-full lg:w-[40%] space-y-5">
+          <div className="w-[40%] space-y-3 md:space-y-5">
             <div className="animate-fade-in-up">
               <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-4 py-2 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
@@ -46,7 +46,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <h1 className="font-heading text-3xl sm:text-4xl font-bold text-white leading-[1.15] animate-fade-in-up delay-100">
+            <h1 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-[1.15] animate-fade-in-up delay-100">
               We Create{' '}
               <span className="gradient-text">Cinematic</span>
               <br />
@@ -87,7 +87,7 @@ export default function Hero() {
           </div>
 
           {/* Right — 60% video in rounded rectangle */}
-          <div className="w-full lg:w-[60%] animate-fade-in-up delay-200">
+          <div className="w-[60%] animate-fade-in-up delay-200">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-500/10 border border-white/10" style={{ aspectRatio: '16/9' }}>
               <video
                 autoPlay

@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Services from './components/Services';
 import Industries from './components/Industries';
-import Portfolio from './components/Portfolio';
 import WhyUs from './components/WhyUs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -39,7 +38,6 @@ function App() {
       <Stats />
       <Services />
       <Industries />
-      <Portfolio />
       <WhyUs />
       <CTA onRequestCallback={() => setShowCallback(true)} />
       <Footer />

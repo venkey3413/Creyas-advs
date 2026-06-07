@@ -27,7 +27,7 @@ export default function Industries() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="industries" className="relative section-padding overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #fef9f0 100%)' }}>
+    <section id="industries" className="relative py-10 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #fef9f0 100%)' }}>
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-transparent to-amber-50/30" />
       <div className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -37,7 +37,7 @@ export default function Industries() {
       />
 
       <div className="relative container-max">
-        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-16 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
+        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-8 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
           <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Sectors We Serve</p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Industries We <span className="shimmer-text">Excel In</span>
@@ -47,7 +47,7 @@ export default function Industries() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 gap-3 md:gap-6">
           {industries.map((industry, i) => (
             <IndustryCard key={industry.name} industry={industry} index={i} />
           ))}
