@@ -27,27 +27,54 @@ export default function Industries() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="industries" className="relative py-10 md:py-14 px-4 md:px-8 lg:px-12 overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f0fdf4 100%)' }}>
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-transparent to-amber-50/30" />
-      <div className="absolute inset-0 opacity-[0.04]"
+    <section
+      id="industries"
+      className="relative py-10 md:py-24 overflow-hidden"
+      style={{
+        backgroundImage: "url('/cinematic-industries-bg.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#ECF5FC',
+      }}
+    >
+      {/* Overlay */}
+      <div
+        className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(249,115,22,0.5) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px',
+          background: 'linear-gradient(180deg, rgba(236,245,252,0.92), rgba(230,241,250,0.95))',
+          backdropFilter: 'blur(2px)',
         }}
       />
 
-      <div className="relative container-max">
-        <div ref={ref as React.RefObject<HTMLDivElement>} className={`text-center mb-8 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}>
-          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3">Sectors We Serve</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Industries We <span className="shimmer-text">Excel In</span>
+      <div className="relative z-10 container-max px-4 md:px-8 lg:px-12">
+        <div
+          ref={ref as React.RefObject<HTMLDivElement>}
+          className={`text-center mb-8 md:mb-12 ${isVisible ? 'animate-on-scroll visible' : 'animate-on-scroll'}`}
+        >
+          <span
+            className="block text-center font-bold tracking-[2px] mb-3 md:mb-4 text-xs md:text-sm"
+            style={{ color: '#F59E0B' }}
+          >
+            SECTORS WE SERVE
+          </span>
+          <h2
+            className="font-heading font-extrabold text-2xl md:text-4xl lg:text-5xl mb-4 md:mb-5"
+            style={{ color: '#07142C' }}
+          >
+            Industries We{' '}
+            <span style={{ color: '#F59E0B' }}>Excel In</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Whether it's a high-energy TVC or a nuanced corporate film, we deliver stunning visual narratives across every sector.
+          <p
+            className="max-w-2xl mx-auto text-center text-sm md:text-lg leading-relaxed"
+            style={{ color: '#4B5563' }}
+          >
+            Whether it's a high-energy TVC or a nuanced corporate film,
+            we deliver stunning visual narratives across every sector.
           </p>
         </div>
 
-        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 gap-3 md:gap-6">
+        <div className="grid grid-cols-4 md:grid-cols-5 gap-2 md:gap-5">
           {industries.map((industry, i) => (
             <IndustryCard key={industry.name} industry={industry} index={i} />
           ))}
@@ -63,15 +90,37 @@ function IndustryCard({ industry, index }: { industry: typeof industries[0]; ind
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`group flex flex-col items-center text-center p-2 md:p-6 rounded-2xl bg-white border border-gray-200 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/10 cursor-pointer ${
+      className={`group flex flex-col items-center text-center p-2 md:p-6 cursor-pointer ${
         isVisible ? 'animate-on-scroll-scale visible' : 'animate-on-scroll-scale'
       }`}
-      style={{ transitionDelay: `${index * 50}ms` }}
+      style={{
+        background: 'rgba(255,255,255,0.85)',
+        backdropFilter: 'blur(12px)',
+        border: '1px solid rgba(255,255,255,0.5)',
+        borderRadius: '20px',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+        transition: 'all 0.4s ease',
+        transitionDelay: `${index * 50}ms`,
+      }}
+      onMouseEnter={e => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-8px)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 40px rgba(0,0,0,0.12)';
+      }}
+      onMouseLeave={e => {
+        (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+      }}
     >
-      <div className="w-8 h-8 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary-500/10 flex items-center justify-center mb-1 md:mb-3 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
-        <industry.icon className="w-4 h-4 md:w-7 md:h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
+      <div
+        className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-1 md:mb-3 transition-all duration-300"
+        style={{ background: 'rgba(245,158,11,0.1)' }}
+      >
+        <industry.icon className="w-4 h-4 md:w-6 md:h-6" style={{ color: '#F59E0B' }} />
       </div>
-      <p className="text-gray-600 group-hover:text-gray-900 font-medium text-[9px] md:text-sm transition-colors duration-300 leading-tight">
+      <p
+        className="font-semibold text-[9px] md:text-sm leading-tight transition-colors duration-300 group-hover:text-amber-500"
+        style={{ color: '#07142C' }}
+      >
         {industry.name}
       </p>
     </div>
