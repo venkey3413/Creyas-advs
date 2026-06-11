@@ -118,6 +118,23 @@ export default function FilmShowcase() {
                   boxShadow: '0 8px 30px rgba(15,23,42,0.08)',
                   background: '#FFFFFF',
                   cursor: 'pointer',
+                  transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'scale(1.08) translateY(-6px)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 40px rgba(15,23,42,0.2)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'scale(1) translateY(0)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 30px rgba(15,23,42,0.08)';
+                }}
+                onTouchStart={e => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'scale(1.08) translateY(-6px)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 40px rgba(15,23,42,0.2)';
+                }}
+                onTouchEnd={e => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'scale(1) translateY(0)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 30px rgba(15,23,42,0.08)';
                 }}
               >
                 {/* Film holes top */}
