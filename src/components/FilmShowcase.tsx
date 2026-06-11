@@ -52,7 +52,7 @@ export default function FilmShowcase() {
       <section
         id="portfolio"
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 40%, #EDF6FD 40%, #F5FAFF 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 48%, #EDF6FD 48%, #F5FAFF 100%)' }}
       >
         {/* Rotating film reel background - reduced to 50% */}
         <div
