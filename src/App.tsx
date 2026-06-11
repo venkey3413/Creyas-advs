@@ -5,6 +5,7 @@ import Stats from './components/Stats';
 import Services from './components/Services';
 import Industries from './components/Industries';
 import WhyUs from './components/WhyUs';
+import FilmShowcase from './components/FilmShowcase';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CallbackPopup from './components/CallbackPopup';
@@ -38,6 +39,7 @@ function App() {
       <Stats />
       <Services />
       <Industries />
+      <FilmShowcase />
       <CTA onRequestCallback={() => setShowCallback(true)} />
       <Footer />
 
