@@ -54,6 +54,17 @@ export default function FilmShowcase() {
         className="relative overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 48%, #EDF6FD 48%, #F5FAFF 100%)' }}
       >
+        {/* Film strip image stretched in white/light blue area */}
+        <div
+          className="absolute bottom-0 left-0 w-full pointer-events-none"
+          style={{ top: '48%' }}
+        >
+          <img
+            src="/film strip.png"
+            alt="film strip"
+            className="w-full h-full object-cover"
+          />
+        </div>
         {/* Rotating film reel background - reduced to 50% */}
         <div
           className="absolute opacity-[0.04] pointer-events-none"
