@@ -41,8 +41,8 @@ export default function FilmShowcase() {
     <>
       <section
         id="portfolio"
-        className="relative overflow-hidden py-14 md:py-16"
-        style={{ background: 'linear-gradient(180deg, #F8FCFF 0%, #EDF6FD 50%, #F5FAFF 100%)' }}
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 40%, #EDF6FD 40%, #F5FAFF 100%)' }}
       >
         {/* Rotating film reel background - reduced to 50% */}
         <div
@@ -74,20 +74,20 @@ export default function FilmShowcase() {
           }}
         />
 
-        {/* Section heading */}
-        <div className="text-center mb-10 md:mb-14 px-4">
-          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3" style={{ color: '#F59E0B' }}>Portfolio</p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3" style={{ color: '#07142C' }}>
+        {/* Section heading - on dark background */}
+        <div className="text-center pt-14 md:pt-16 pb-10 md:pb-14 px-4">
+          <p className="font-semibold text-sm tracking-wider uppercase mb-3" style={{ color: '#F59E0B' }}>Portfolio</p>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-white">
             Our <span style={{ color: '#F59E0B' }}>Work</span>
           </h2>
-          <p className="text-lg md:text-xl" style={{ color: '#4B5563' }}>Movies &amp; Advertisement</p>
+          <p className="text-lg md:text-xl text-gray-300">Movies &amp; Advertisement</p>
         </div>
 
-        {/* Film strip */}
-        <div className="overflow-hidden relative">
+        {/* Film strip - light blue background area */}
+        <div className="overflow-hidden relative pb-14 md:pb-16">
           <div
             ref={stripRef}
-            className="flex gap-8 w-max cursor-grab active:cursor-grabbing"
+            className="flex gap-4 w-max cursor-grab active:cursor-grabbing"
             style={{ animation: 'marquee 35s linear infinite' }}
             onMouseDown={onMouseDown}
             onMouseMove={onMouseMove}
@@ -100,11 +100,11 @@ export default function FilmShowcase() {
                 onClick={() => openModal(film.video)}
                 className="relative flex-shrink-0 group"
                 style={{
-                  width: '420px',
-                  height: '240px',
-                  borderRadius: '12px',
+                  width: '210px',
+                  height: '120px',
+                  borderRadius: '10px',
                   overflow: 'hidden',
-                  border: '6px solid #D9E6F3',
+                  border: '4px solid #D9E6F3',
                   boxShadow: '0 8px 30px rgba(15,23,42,0.08)',
                   background: '#FFFFFF',
                   cursor: 'pointer',
@@ -125,10 +125,10 @@ export default function FilmShowcase() {
 
                 {/* Play button */}
                 <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 z-20"
-                  style={{ background: '#f59e0b', boxShadow: '0 0 40px rgba(245,158,11,0.8)' }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 z-20"
+                  style={{ background: '#f59e0b', boxShadow: '0 0 20px rgba(245,158,11,0.8)' }}
                 >
-                  <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                  <Play className="w-3 h-3 text-white ml-0.5" fill="currentColor" />
                 </div>
               </div>
             ))}
