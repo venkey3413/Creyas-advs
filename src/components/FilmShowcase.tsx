@@ -40,13 +40,17 @@ export default function FilmShowcase() {
   return (
     <>
       <section
-        className="relative overflow-hidden py-16 md:py-24"
-        style={{ background: '#050816' }}
+        className="relative overflow-hidden py-14 md:py-16"
+        style={{ background: 'linear-gradient(180deg, #F8FCFF 0%, #EDF6FD 50%, #F5FAFF 100%)' }}
       >
-        {/* Rotating film reel background */}
+        {/* Rotating film reel background - reduced to 50% */}
         <div
-          className="absolute top-1/2 left-1/2 w-[850px] h-[850px] opacity-5 pointer-events-none"
+          className="absolute opacity-[0.04] pointer-events-none"
           style={{
+            width: '420px',
+            height: '420px',
+            top: '50%',
+            left: '50%',
             transform: 'translate(-50%, -50%)',
             backgroundImage: "url('/images/film-reel.png')",
             backgroundSize: 'contain',
@@ -56,11 +60,16 @@ export default function FilmShowcase() {
           }}
         />
 
-        {/* Radial glow */}
+        {/* Soft orange glow */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at center, rgba(245,158,11,0.08), transparent 70%)',
+            width: '500px',
+            height: '500px',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'radial-gradient(circle, rgba(245,158,11,0.15), transparent 70%)',
           }}
         />
 
@@ -85,17 +94,18 @@ export default function FilmShowcase() {
                   height: '240px',
                   borderRadius: '12px',
                   overflow: 'hidden',
-                  border: '8px solid #111827',
-                  boxShadow: '0 0 25px rgba(245,158,11,0.15)',
+                  border: '6px solid #D9E6F3',
+                  boxShadow: '0 8px 30px rgba(15,23,42,0.08)',
+                  background: '#FFFFFF',
                   cursor: 'pointer',
                 }}
               >
                 {/* Film holes top */}
                 <div className="absolute top-0 left-0 w-full h-3 z-10"
-                  style={{ background: 'repeating-linear-gradient(90deg, transparent 0 12px, #050816 12px 26px)' }} />
+                  style={{ background: 'repeating-linear-gradient(90deg, transparent 0 12px, #BFD2E8 12px 26px)' }} />
                 {/* Film holes bottom */}
                 <div className="absolute bottom-0 left-0 w-full h-3 z-10"
-                  style={{ background: 'repeating-linear-gradient(90deg, transparent 0 12px, #050816 12px 26px)' }} />
+                  style={{ background: 'repeating-linear-gradient(90deg, transparent 0 12px, #BFD2E8 12px 26px)' }} />
 
                 <img
                   src={film.thumb}
