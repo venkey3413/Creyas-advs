@@ -73,6 +73,15 @@ export default function FilmShowcase() {
           }}
         />
 
+        {/* Section heading */}
+        <div className="text-center mb-10 md:mb-14 px-4">
+          <p className="text-primary-400 font-semibold text-sm tracking-wider uppercase mb-3" style={{ color: '#F59E0B' }}>Portfolio</p>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3" style={{ color: '#07142C' }}>
+            Our <span style={{ color: '#F59E0B' }}>Work</span>
+          </h2>
+          <p className="text-lg md:text-xl" style={{ color: '#4B5563' }}>Movies &amp; Advertisement</p>
+        </div>
+
         {/* Film strip */}
         <div className="overflow-hidden relative">
           <div
