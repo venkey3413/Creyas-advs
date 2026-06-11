@@ -7,12 +7,22 @@ const films = [
   { video: 'https://player.vimeo.com/video/1164613270', thumb: 'https://vumbnail.com/1164613270.jpg' },
   { video: 'https://player.vimeo.com/video/1164612938', thumb: 'https://vumbnail.com/1164612938.jpg' },
   { video: 'https://player.vimeo.com/video/1164617508', thumb: 'https://vumbnail.com/1164617508.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613076', thumb: 'https://vumbnail.com/1164613076.jpg' },
+  { video: 'https://player.vimeo.com/video/1164617688', thumb: 'https://vumbnail.com/1164617688.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613140', thumb: 'https://vumbnail.com/1164613140.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613194', thumb: 'https://vumbnail.com/1164613194.jpg' },
+  { video: 'https://player.vimeo.com/video/1164612983', thumb: 'https://vumbnail.com/1164612983.jpg' },
   // Duplicate for seamless marquee loop
   { video: 'https://player.vimeo.com/video/1164617713', thumb: 'https://vumbnail.com/1164617713.jpg' },
   { video: 'https://player.vimeo.com/video/1164612885', thumb: 'https://vumbnail.com/1164612885.jpg' },
   { video: 'https://player.vimeo.com/video/1164613270', thumb: 'https://vumbnail.com/1164613270.jpg' },
   { video: 'https://player.vimeo.com/video/1164612938', thumb: 'https://vumbnail.com/1164612938.jpg' },
   { video: 'https://player.vimeo.com/video/1164617508', thumb: 'https://vumbnail.com/1164617508.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613076', thumb: 'https://vumbnail.com/1164613076.jpg' },
+  { video: 'https://player.vimeo.com/video/1164617688', thumb: 'https://vumbnail.com/1164617688.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613140', thumb: 'https://vumbnail.com/1164613140.jpg' },
+  { video: 'https://player.vimeo.com/video/1164613194', thumb: 'https://vumbnail.com/1164613194.jpg' },
+  { video: 'https://player.vimeo.com/video/1164612983', thumb: 'https://vumbnail.com/1164612983.jpg' },
 ];
 
 export default function FilmShowcase() {
