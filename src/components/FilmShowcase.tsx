@@ -40,6 +40,7 @@ export default function FilmShowcase() {
   return (
     <>
       <section
+        id="portfolio"
         className="relative overflow-hidden py-14 md:py-16"
         style={{ background: 'linear-gradient(180deg, #F8FCFF 0%, #EDF6FD 50%, #F5FAFF 100%)' }}
       >

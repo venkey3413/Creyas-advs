@@ -4,9 +4,8 @@ import { Phone } from 'lucide-react';
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Industries', href: '#industries' },
-  { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ];
 
